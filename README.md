@@ -1,23 +1,17 @@
-# Caddy-Cloudflare
+# docker-caddy-4dns
 
-[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-iarekylew00t%2Fcaddy--cloudflare-blue?style=flat)](https://hub.docker.com/r/iarekylew00t/caddy-cloudflare)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/IAreKyleW00t/docker-caddy-cloudflare?label=version)](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/tags)
-[![GitHub build status](https://img.shields.io/github/actions/workflow/status/IAreKyleW00t/docker-caddy-cloudflare/docker.yml?style=flat)](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/actions/workflows/docker.yml)
-[![License](https://img.shields.io/github/license/IAreKyleW00t/docker-caddy-cloudflare)](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/blob/main/LICENSE)
 
 The official [Caddy](https://hub.docker.com/_/caddy) Docker image with the added [caddy-dns/cloudflare](https://github.com/caddy-dns/cloudflare) module for DNS-01 ACME validation support. This image does not change anything with Caddy except replacing the `caddy` binary. Built for all supported platforms!
 
 ```sh
 # Docker Hub
-docker pull iarekylew00t/caddy-cloudflare:latest
+docker pull life8688/docker-caddy-4dns:v2.6.4
 
-# GHCR
-docker pull ghcr.io/iarekylew00t/caddy-cloudflare:latest
 ```
 
 ## Tags
 
-The following tags are available for the `iarekylew00t/caddy-cloudflare` image.
+The following tags are available for the `life8688/docker-caddy-4dns` image.
 
 - `latest`
 - `<version>` (eg: `2.6.4`, including: `2.6`, `2`, etc.)
@@ -37,7 +31,7 @@ docker run --rm -it \
   -v caddy_config:/config \
   -v $PWD/Caddyfile:/etc/caddy/Caddyfile \
   -e CF_API_TOKEN=UhKLc...JD9jk \
-  iarekylew00t/caddy-cloudflare:latest
+  life8688/docker-caddy-4dns:v2.6.4
 ```
 
 Then for _each site_ you will need to add the following to your [`tls`](https://caddyserver.com/docs/caddyfile/directives/tls#tls) directive in your `Caddyfile`
@@ -82,24 +76,10 @@ You can generate a Cloudflare API token via the Cloudflare web console using the
 You can easily build the Docker image locally by doing
 
 ```sh
-docker build -t caddy-cloudflare .
+docker build -t docker-caddy-4dns .
 ```
 
-## Container signatures
-
-All container images will be automatically signed via [Cosign](https://docs.sigstore.dev/cosign/overview/) using [keyless signatures](https://docs.sigstore.dev/cosign/keyless/). You can use the following command to verify the integrity of these images yourself.
-
-```sh
-cosign verify \
-  --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  --certificate-identity-regexp https://github.com/IAreKyleW00t/docker-caddy-cloudflare/.github/workflows/ \
-  iarekylew00t/caddy-cloudflare:latest
-```
-
-## Contributing
-
-Feel free to contribute and make things better by opening an [Issue](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/issues) or [Pull Request](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/pulls).
 
 ## License
 
-See [LICENSE](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/blob/main/LICENSE).
+See [LICENSE](https://github.com/jamosnet/docker-caddy-4dns/blob/main/LICENSE).
