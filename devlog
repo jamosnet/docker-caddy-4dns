@@ -1,0 +1,10 @@
+
+    --with github.com/caddy-dns/linode \  
+
+    --with github.com/caddy-dns/godaddy \
+
+
+
+docker tag    life8688/docker-caddy-4dns    life8688/docker-caddy-4dns:v2.6.4
+docker push  life8688/docker-caddy-4dns:v2.6.4
+
